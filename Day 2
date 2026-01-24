@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class PermutationCombination {
+
+    static long factorial(int num) {
+        long fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter value of n: ");
+        int n = sc.nextInt();
+
+        System.out.print("Enter value of r: ");
+        int r = sc.nextInt();
+
+        if (n < r) {
+            System.out.println("n should be greater than or equal to r.");
+        } else {
+            long nFact = factorial(n);
+            long rFact = factorial(r);
+            long nrFact = factorial(n - r);
+
+            long nPr = nFact / nrFact;                 
+            long nCr = nFact / (rFact * nrFact);       
+
+            System.out.println("Permutation (nPr) = " + nPr);
+            System.out.println("Combination (nCr) = " + nCr);
+        }
+
+        sc.close();
+    }
+}
