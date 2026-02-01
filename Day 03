@@ -1,0 +1,47 @@
+//Tower of Hanoi
+
+
+import java.util.*;
+
+public class day3 {
+	static void toh(int n,String s,String h,String d) {
+		if(n==1) {
+			System.out.println("move disk "+n+" from "+s+" to "+d);
+			return;
+		}
+		toh(n-1,s,d,h);
+		System.out.println("move disk "+n+" from "+s+" to "+d);
+		toh(n-1,h,s,d);
+	}
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		int n=3;
+		toh(n,"s","h","d");
+		
+	}
+}
+
+//Print string in reverse
+
+
+import java.util.*;
+
+public class day3 {
+	static void stringRev(String a,int ind) {
+		if(ind==0) {
+			System.out.print(a.charAt(0));
+			return ;
+		}
+		System.out.print(a.charAt(ind)+" ");
+		stringRev(a,ind-1);
+		
+		
+	}
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		int n=3;
+		String a="sai";
+		stringRev(a,a.length()-1);
+		
+	}
+}
