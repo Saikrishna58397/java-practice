@@ -1,0 +1,59 @@
+import java.util.*;
+
+public class day5 {
+	
+	
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		String a="abcabc";
+		StringBuilder c=new StringBuilder(a);
+		for(int i=0;i<c.length()-1;i++) {
+			for(int j=i+1;j<c.length();j++) {
+				if(c.charAt(i)==c.charAt(j)) {
+					c.deleteCharAt(j);
+					j--;
+				}
+			}
+		}
+		System.out.println(c);
+}
+}
+
+
+
+import java.util.*;
+
+public class day5 {
+	
+	
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		String a="abc";
+		for(int i=0;i<a.length();i++) {
+			int j=i+1;
+			do {
+				System.out.println(a.substring(i, j));
+				j++;
+			}while(j<a.length()+1);
+		}
+}
+}
+
+import java.util.*;
+
+public class day5 {
+	
+	
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		String a="abc";
+		for(int i=0;i<a.length();i++) {
+			System.out.println(a.charAt(i));
+			for(int j=i+1;j<a.length();j++) {
+				System.out.println(a.charAt(i)+""+a.charAt(j));
+			}
+		}
+		
+		
+	}
+}
