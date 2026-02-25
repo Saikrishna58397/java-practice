@@ -1,0 +1,39 @@
+
+
+package sai;
+import java.util.*;
+public class class1 {
+	public static int div(int [] arr,int st,int last) {
+		int pi=arr[last];
+		int i=st-1;
+		for(int j=st;j<last;j++) {
+			if(arr[j]<pi) {
+				i++;
+				int temp=arr[j];
+				arr[j]=arr[i];
+				arr[i]=temp;
+			}
+		}
+		
+		int temp=arr[i+1];
+		arr[i+1]=arr[last];
+		arr[last]=temp;
+		return i+1;
+	}
+	public static void sort(int [] arr,int st,int last) {
+		if(st<last) {
+			int pi=div(arr,st,last);
+			sort(arr,st,pi-1);
+			sort(arr,pi+1,last);
+		}
+	}
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		int [] arr= {7,3,2,4,1};
+		sort(arr,0,arr.length-1);
+		for(int x:arr) {
+			System.out.println(x);
+		}
+	}
+
+}
